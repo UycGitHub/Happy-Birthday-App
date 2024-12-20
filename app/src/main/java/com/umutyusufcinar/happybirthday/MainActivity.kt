@@ -20,8 +20,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             HappyBirthdayTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    GreetingText(
+                        message = "Happy Birthday LadyBug version!",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -31,9 +31,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun GreetingText(message: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Hello $message!",
         modifier = modifier
     )
 }
@@ -42,6 +42,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     HappyBirthdayTheme {
-        Greeting("Android")
+        GreetingText("Android")
     }
 }
