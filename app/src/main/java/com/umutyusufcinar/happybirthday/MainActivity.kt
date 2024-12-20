@@ -23,6 +23,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     GreetingText(
                         message = "Happy Birthday LadyBug version!",
+                        fromWho = "UycDev",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -32,7 +33,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun GreetingText(message: String, modifier: Modifier = Modifier) {
+fun GreetingText(message: String, fromWho:String, modifier: Modifier = Modifier) {
+    Text(
+        text = "From $fromWho,",
+        fontSize = 16.sp,
+        lineHeight = 23.sp,
+    )
     Text(
         text = "Hello $message!",
         fontSize = 16.sp,
@@ -44,6 +50,6 @@ fun GreetingText(message: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     HappyBirthdayTheme {
-        GreetingText("Happy Birthday LadyBug version!")
+        GreetingText("Happy Birthday LadyBug version!", fromWho = "UycDev")
     }
 }
